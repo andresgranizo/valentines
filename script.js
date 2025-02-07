@@ -1,27 +1,29 @@
-const music = document.getElementById("bg-music");
+const pages = document.querySelectorAll(".page");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const noButton = document.getElementById("no-button");
+const yesButton = document.getElementById("yes-button");
 const musicButton = document.getElementById("start-music");
+const music = document.getElementById("bg-music");
 const welcomeScreen = document.getElementById("welcome-screen");
 const cardContainer = document.getElementById("card-container");
 
-// Iniciar música y mostrar carta después del clic
+let currentPage = 0;
+let noClickCount = 0;
+const noMessages = ["¿Segura??", "¿Estás segura segura??", "Última opción!"];
+
 musicButton.addEventListener("click", () => {
     music.play();
     welcomeScreen.classList.add("hidden");
     cardContainer.classList.remove("hidden");
 });
 
-// Sistema de páginas en la carta
-const pages = document.querySelectorAll(".page");
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
-
-let currentPage = 0;
-
 function updatePages() {
     pages.forEach((page, index) => {
-        page.classList.toggle("active", index === currentPage);
+        page.classList.remove("active");
     });
 
+    pages[currentPage].classList.add("active");
     prevBtn.disabled = currentPage === 0;
     nextBtn.disabled = currentPage === pages.length - 1;
 }
@@ -38,6 +40,19 @@ prevBtn.addEventListener("click", () => {
         currentPage--;
         updatePages();
     }
+});
+
+noButton.addEventListener("click", () => {
+    if (noClickCount < noMessages.length) {
+        noButton.textContent = noMessages[noClickCount];
+        noClickCount++;
+    } else {
+        noButton.style.display = "none";
+    }
+});
+
+yesButton.addEventListener("click", () => {
+    alert("¡Sabía que dirías que sí!, pide tus cupones a tu ingeniero de confianza!  ❤️");
 });
 
 updatePages();

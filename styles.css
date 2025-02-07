@@ -22,105 +22,86 @@ body {
 
 /* Pingüino */
 .penguin {
-    width: 120px;
-    margin-bottom: 10px;
-    animation: wave 1.5s infinite alternate ease-in-out;
+    width: 100px;
+    display: block;
+    margin: 0 auto 10px;
 }
 
-/* Animación del pingüino saludando */
-@keyframes wave {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(10deg); }
-}
-
-#welcome-screen h1 {
-    font-size: 24px;
-}
-
+/* Botón de reproducir música */
 #start-music {
-    margin-top: 20px;
-    padding: 10px 15px;
+    margin-top: 10px;
+    padding: 12px 20px;
     font-size: 16px;
     background: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #start-music:hover {
     background: #45a049;
 }
 
+#start-music::before {
+    content: "🎵 ";
+    font-size: 20px;
+}
 /* Ocultar la carta al inicio */
 .hidden {
     display: none;
 }
 
-/* Estilos de la carta */
+/* Contenedor de la carta */
 #card-container {
     text-align: center;
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
 }
 
+/* Tarjeta (card) */
 .card {
     background: white;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 100%;
+    max-width: 400px;
+    min-height: 250px;
     position: relative;
     z-index: 2;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Animación de cambio de página */
+/* Solo mostrar la página activa */
 .page {
     display: none;
 }
 
 .page.active {
     display: block;
-    animation: slideIn 0.5s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-@keyframes slideIn {
-    from { transform: translateX(100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Botones */
+/* Botones de navegación */
 .buttons {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-}
-
-button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-#prev {
-    background: #888;
-    color: white;
-}
-
-#next {
-    background: #ff4d6d;
-    color: white;
-}
-
-#next:hover {
-    background: #ff1f49;
-}
-
-#prev:disabled {
-    background: gray;
-    cursor: not-allowed;
 }
