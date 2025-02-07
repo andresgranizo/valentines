@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 Carta de San Valentín 💌</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Pantalla inicial con pingüino -->
+    <div id="welcome-screen">
+        <img src="penguin.png" alt="Pingüino saludando" class="penguin">
+        <h1>Hola Stefany 💖</h1>
+        <p>Primero dale clic en reproducir música 🎶</p>
+        <button id="start-music">🎵 Reproducir Música</button>
+    </div>
+
+    <!-- Carta en tarjetas -->
+    <div id="card-container" class="hidden">
+        <div class="card">
+            <div class="page active">
+                <h1>💌 De Andres para Stefany 💌</h1>
+                <p>Hola Stefany, esta carta es especial para ti. 💖</p>
+            </div>
+            <div class="page">
+                <h1>🌹 Lo que pienso de ti 🌹</h1>
+                <p>Eres una persona increíble, llena de luz y alegría. ✨</p>
+            </div>
+            <div class="page">
+                <h1>💖 Feliz San Valentín 💖</h1>
+                <p>Espero que este día sea tan especial como tú. Te mereces lo mejor. 💝</p>
+            </div>
+            <div class="page">
+                <h1>💌 Fin de la Carta 💌</h1>
+                <p>Gracias por leer mi mensaje. ¡Eres genial! ❤️</p>
+            </div>
+
+            <div class="buttons">
+                <button id="prev" disabled>⬅ Anterior</button>
+                <button id="next">Siguiente ➡</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Música de fondo -->
+    <audio id="bg-music" loop>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

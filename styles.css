@@ -1,0 +1,126 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('fondo.jpg') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Pantalla inicial */
+#welcome-screen {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+}
+
+/* Pingüino */
+.penguin {
+    width: 120px;
+    margin-bottom: 10px;
+    animation: wave 1.5s infinite alternate ease-in-out;
+}
+
+/* Animación del pingüino saludando */
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+}
+
+#welcome-screen h1 {
+    font-size: 24px;
+}
+
+#start-music {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#start-music:hover {
+    background: #45a049;
+}
+
+/* Ocultar la carta al inicio */
+.hidden {
+    display: none;
+}
+
+/* Estilos de la carta */
+#card-container {
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Animación de cambio de página */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Botones */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+#prev {
+    background: #888;
+    color: white;
+}
+
+#next {
+    background: #ff4d6d;
+    color: white;
+}
+
+#next:hover {
+    background: #ff1f49;
+}
+
+#prev:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
