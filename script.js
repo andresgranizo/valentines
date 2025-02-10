@@ -52,7 +52,7 @@ noButton.addEventListener("click", () => {
 });
 
 yesButton.addEventListener("click", () => {
-    alert("¡Sabía que dirías que sí!, pide tus cupones a tu ingeniero de confianza!  ❤️");
+    alert("¡Sabía que dirías que sí!, nos vemos viernes!  ❤️");
 });
 
 updatePages();
